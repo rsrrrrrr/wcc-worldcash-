@@ -1,0 +1,8 @@
+@@ -25,6 +25,8 @@ EXPOSE 9999
+# ZeroMQ port.
+EXPOSE 9999
+
+RUN echo 'alias cli="wcc-worldcash-cli -rpcuser=$wcc-worldcash_RPC_USER -rpcpassword=$wcc-worldcash_RPC_PASSWORD"' > /root/.bash_aliases
+
+# Copying required binaries from builder stage.
+COPY --from=builder wcc-worldcashd wcc-worldcash-cli /usr/local/bin/
